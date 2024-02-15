@@ -17,7 +17,7 @@ function App() {
     // ローカルストレージにノートを保存する
     // JSON形式じゃないと入力した文字列で保存されない
     localStorage.setItem("notes", JSON.stringify(notes));
-  }, [notes]); // 第二引数のnotesの中身が変わる度に第一引数のCB関数が発火する
+  }, [notes]); // 第一引数のnotesの中身が変わる度に第二引数のCB関数が発火する
 
   // リロード時一番上のノートを開いた状態にする
   // ifはノートがないときエラー吐かないようにするため
@@ -57,13 +57,11 @@ function App() {
     // 修正された新しいノートの配列を返す
     const updatedNoteArray = notes.map((note) => {
       if(note.id === updatedNote.id) {
-        // console.log(updatedNote);
         return updatedNote; // 編集中のノート
       } else {
         return note; // 残りのノート
       }
     });
-    // console.log(updatedNoteArray);
     setNotes(updatedNoteArray);
   };
 

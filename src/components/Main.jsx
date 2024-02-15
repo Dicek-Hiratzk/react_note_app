@@ -13,7 +13,6 @@ const Main = ({ activeNote, onUpdateNote }) => {
       [key]: value, // [key]は動的キー
       modDate: Date.now(),
     })
-    // console.log([key]);
   };
   // key: title, constent: 第一引数
   // value: e.target.value: 第二引数
